@@ -17,15 +17,15 @@
 <div class="sub">메시지: “사람은 태어나(유전·가족력) 소득을 벌고(세금), 병들고 늙고(리스크) 끝내 떠나며(상속), 보험으로 모든 위험을 관리한다.”</div>
 
 
-<nav class="nav">
-<button class="tab active" data-target="timeline">1) 인생 타임라인 겹침형</button>
-<button class="tab" data-target="swimlane">2) 세대 스윔레인</button>
-<button class="tab" data-target="onion">3) 자산 양파 모델</button>
-<button class="tab" data-target="sankey">4) 상속 생키 다이어그램</button>
+<nav class="nav" role="tablist" aria-label="Infographics Navigation">
+<button id="tab-timeline" class="tab active" data-target="timeline" role="tab" aria-controls="timeline" aria-selected="true">1) 인생 타임라인 겹침형</button>
+<button id="tab-swimlane" class="tab" data-target="swimlane" role="tab" aria-controls="swimlane" aria-selected="false">2) 세대 스윔레인</button>
+<button id="tab-onion" class="tab" data-target="onion" role="tab" aria-controls="onion" aria-selected="false">3) 자산 양파 모델</button>
+<button id="tab-sankey" class="tab" data-target="sankey" role="tab" aria-controls="sankey" aria-selected="false">4) 상속 생키 다이어그램</button>
 </nav>
 
 <!-- 1. TIMELINE -->
-<section id="timeline" class="section active">
+<section id="timeline" class="section active" role="tabpanel" aria-labelledby="tab-timeline">
 <div class="card">
 <div class="legend">
 <span><span class="dot" style="background:var(--accent-2)"></span> 유전·가족력</span>
@@ -93,7 +93,7 @@
 </section>
 
 <!-- 2. SWIMLANE -->
-<section id="swimlane" class="section">
+<section id="swimlane" class="section" role="tabpanel" aria-labelledby="tab-swimlane">
 <div class="card">
 <div class="swim">
 <div class="lane-h"></div>
@@ -172,7 +172,7 @@
 </section>
 
 <!-- 3. ONION -->
-<section id="onion" class="section">
+<section id="onion" class="section" role="tabpanel" aria-labelledby="tab-onion">
 <div class="card">
 <div class="onion-wrap">
 <svg viewBox="0 0 400 300">
@@ -208,7 +208,7 @@
 </section>
 
 <!-- 4. SANKEY -->
-<section id="sankey" class="section">
+<section id="sankey" class="section" role="tabpanel" aria-labelledby="tab-sankey">
 <div class="card">
 <svg viewBox="0 0 600 250">
 <defs>
