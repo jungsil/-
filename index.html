@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>생애주기 × 리스크 × 보험 × 세금 × 상속 — 4가지 인포그래픽</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb"/>
+<link rel="stylesheet" href="index.css">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+<main class="page">
+<h1>생애주기 × 리스크 × 보험 × 세금 × 상속 — 시각화 4종</h1>
+<div class="sub">메시지: “사람은 태어나(유전·가족력) 소득을 벌고(세금), 병들고 늙고(리스크) 끝내 떠나며(상속), 보험으로 모든 위험을 관리한다.”</div>
+
+
+<nav class="nav">
+<button class="tab active" data-target="timeline">1) 인생 타임라인 겹침형</button>
+<button class="tab" data-target="swimlane">2) 세대 스윔레인</button>
+<button class="tab" data-target="onion">3) 자산 양파 모델</button>
+<button class="tab" data-target="sankey">4) 상속 생키 다이어그램</button>
+</nav>
+
+<!-- 1. TIMELINE -->
+<section id="timeline" class="section active">
+<div class="card">
+<div class="legend">
+<span><span class="dot" style="background:var(--accent-2)"></span> 유전·가족력</span>
+<span><span class="dot" style="background:var(--danger)"></span> 리스크</span>
+<span><span class="dot" style="background:var(--accent)"></span> 보험</span>
+<span><span class="dot" style="background:var(--tax)"></span> 세금</span>
+<span><span class="dot" style="background:var(--inherit)"></span> 상속</span>
+</div>
+
+<div class="timeline">
+<div class="rail"></div>
+<div class="stops">
+<div class="stop">
+<div class="icon">👶</div>
+<div class="label">출생·유년</div>
+<div class="note">0~19세</div>
+</div>
+<div class="stop">
+<div class="icon">🧑‍🎓</div>
+<div class="label">청년</div>
+<div class="note">20~39세</div>
+</div>
+<div class="stop">
+<div class="icon">👨‍👩‍👧‍👦</div>
+<div class="label">중년</div>
+<div class="note">40~59세</div>
+</div>
+<div class="stop">
+<div class="icon">🧑‍🦳</div>
+<div class="label">장년</div>
+<div class="note">60~79세</div>
+</div>
+<div class="stop">
+<div class="icon">👴</div>
+<div class="label">노년</div>
+<div class="note">80세 이상</div>
+</div>
+<div class="stop">
+<div class="icon">⚰️</div>
+<div class="label">사망·상속</div>
+<div class="note">언제든</div>
+</div>
+</div>
+</div>
+
+<div class="flows">
+<div class="flow genes">
+<div class="pill" style="grid-column: 1 / span 1;">유전/가족력</div>
+</div>
+<div class="flow risk">
+<div class="pill" style="grid-column: 1 / span 6;">3대질병, 상해, 장수 리스크</div>
+</div>
+<div class="flow insure">
+<div class="pill" style="grid-column: 1 / span 6;">건강/종신보험</div>
+</div>
+<div class="flow tax">
+<div class="pill" style="grid-column: 2 / span 4;">소득세·법인세</div>
+</div>
+<div class="flow inherit">
+<div class="pill" style="grid-column: 6 / span 1;">상속세·증여세</div>
+</div>
+</div>
+</div>
+<div class="caption">생애 타임라인 위에 5가지 주제(유전, 리스크, 보험, 세금, 상속)를 겹쳐 표시. 각 주제가 인생의 어느 시점에 주로 발생하는지 직관적으로 파악.</div>
+</section>
+
+<!-- 2. SWIMLANE -->
+<section id="swimlane" class="section">
+<div class="card">
+<div class="swim">
+<div class="lane-h"></div>
+<div class="lane-h">
+<div class="lane-row">
+<div>유년</div>
+<div>청년</div>
+<div>중년</div>
+<div>장년</div>
+<div>노년</div>
+<div>사망/상속</div>
+</div>
+</div>
+
+<div class="lane-h">조부모</div>
+<div>
+<div class="lane-row">
+<div></div>
+<div></div>
+<div></div>
+<div>
+<span class="badge b-risk">건강악화</span>
+<span class="badge b-risk">치매</span>
+</div>
+<div>
+<span class="badge b-risk">장수 리스크</span>
+<span class="badge b-cover">간병보험</span>
+<span class="badge b-cover">연금보험</span>
+</div>
+<div>
+<span class="badge b-cover">상속 플랜</span>
+</div>
+</div>
+</div>
+
+<div class="lane-h">부모</div>
+<div>
+<div class="lane-row">
+<div></div>
+<div>
+<span class="badge b-risk">사회초년</span>
+<span class="badge b-cover">실손보험</span>
+</div>
+<div>
+<span class="badge b-risk">3대질병</span>
+<span class="badge b-risk">소득상실</span>
+<span class="badge b-cover">건강보험</span>
+<span class="badge b-cover">종신보험</span>
+</div>
+<div>
+<span class="badge b-risk">은퇴준비</span>
+<span class="badge b-cover">연금/저축보험</span>
+</div>
+<div></div>
+<div></div>
+</div>
+</div>
+
+<div class="lane-h">자녀</div>
+<div>
+<div class="lane-row">
+<div>
+<span class="badge b-risk">상해/질병</span>
+<span class="badge b-cover">어린이보험</span>
+</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="caption">3세대의 생애주기를 스윔레인(swimlane)으로 구분하여 세대별 주요 리스크와 필요한 보험을 한 눈에 비교.</div>
+</section>
+
+<!-- 3. ONION -->
+<section id="onion" class="section">
+<div class="card">
+<div class="onion-wrap">
+<svg viewBox="0 0 400 300">
+<defs>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.1"/>
+</filter>
+</defs>
+<g transform="translate(160, 150)" filter="url(#shadow)">
+<circle cx="0" cy="0" r="140" fill="#f3f4f6"/>
+<text x="0" y="-120" text-anchor="middle" font-size="12" fill="var(--muted)">현금흐름</text>
+<circle cx="0" cy="0" r="105" fill="#e5e7eb"/>
+<text x="0" y="-85" text-anchor="middle" font-size="12" fill="var(--muted)">투자자산</text>
+<circle cx="0" cy="0" r="70" fill="#d1d5db"/>
+<text x="0" y="-50" text-anchor="middle" font-size="12" fill="var(--muted)">은퇴자산</text>
+<circle cx="0" cy="0" r="35" fill="var(--accent)"/>
+<text x="0" y="4" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">보장자산</text>
+</g>
+</svg>
+<div>
+<h3>자산의 4가지 유형 (양파 모델)</h3>
+<p style="font-size:14px;color:var(--muted)">자산을 양파처럼 4겹으로 나누어 안정성의 중요도 순으로 배열. 가장 안쪽의 보장자산(보험)이 모든 자산의 기초가 됨을 시각화.</p>
+<ul style="font-size:14px;line-height:1.7;padding-left:20px">
+<li><b>보장자산:</b> 질병, 사망 등 예측불가한 위험으로부터 가족과 자산을 지키는 최후의 보루. (종신/건강보험)</li>
+<li><b>은퇴자산:</b> 안정적인 노후생활을 위한 필수 자금. (연금보험, 퇴직연금)</li>
+<li><b>투자자산:</b> 적극적인 수익 창출을 위한 자금. (주식, 펀드, 부동산)</li>
+<li><b>현금흐름:</b> 일상적인 소비와 단기 목적을 위한 유동성 자금. (예적금, CMA)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="caption">자산을 4겹의 양파에 비유하여, 가장 안쪽의 보장자산(보험)이 전체 자산을 지키는 핵심임을 강조.</div>
+</section>
+
+<!-- 4. SANKEY -->
+<section id="sankey" class="section">
+<div class="card">
+<svg viewBox="0 0 600 250">
+<defs>
+<linearGradient id="tax-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:var(--tax);stop-opacity:0.7" />
+<stop offset="100%" style="stop-color:var(--tax);stop-opacity:0.5" />
+</linearGradient>
+<linearGradient id="inherit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:var(--inherit);stop-opacity:0.7" />
+<stop offset="100%" style="stop-color:var(--inherit);stop-opacity:0.5" />
+</linearGradient>
+<linearGradient id="insure-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.7" />
+<stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.5" />
+</linearGradient>
+</defs>
+<!-- Nodes -->
+<rect x="20" y="60" width="120" height="40" rx="4" fill="#f3f4f6"/>
+<text x="80" y="85" text-anchor="middle">사망보험금</text>
+<rect x="20" y="150" width="120" height="40" rx="4" fill="#f3f4f6"/>
+<text x="80" y="175" text-anchor="middle">상속재산</text>
+
+<rect x="240" y="105" width="120" height="40" rx="4" fill="#f3f4f6"/>
+<text x="300" y="130" text-anchor="middle">상속세 납부</text>
+
+<rect x="460" y="150" width="120" height="40" rx="4" fill="#f3f4f6"/>
+<text x="520" y="175" text-anchor="middle">상속인 수령</text>
+
+<!-- Flows -->
+<path d="M 140 170 C 190 170, 190 190, 240 190 L 240 160 C 190 160, 190 170, 140 170 Z" fill="url(#inherit-grad)" />
+<path d="M 140 170 C 190 170, 190 125, 240 125 L 240 115 C 190 115, 190 160, 140 160 Z" fill="url(#tax-grad)" />
+<path d="M 140 80 C 190 80, 190 115, 240 115 L 240 125 C 190 125, 190 90, 140 90 Z" fill="url(#insure-grad)" />
+
+<path d="M 360 175 C 410 175, 410 170, 460 170 L 460 180 C 410 180, 410 185, 360 185 Z" fill="url(#inherit-grad)" />
+
+<!-- Labels -->
+<text class="hint" x="180" y="145">상속세</text>
+<text class="hint" x="180" y="105">보험금 활용</text>
+<text class="hint" x="180" y="205">상속인 몫</text>
+</svg>
+</div>
+<div class="caption">상속 과정에서 재산이 어떻게 분배되는지를 생키(Sankey) 다이어그램으로 시각화. 사망보험금을 상속세 재원으로 활용하여 상속재산을 온전히 보전하는 효과를 보여줌.</div>
+</section>
+
+</main>
+<script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+:root{
+--ink:#111827; --muted:#6b7280; --bg:#ffffff;
+--accent:#2563eb; --accent-2:#10b981; --danger:#ef4444;
+--tax:#9333ea; --inherit:#f59e0b; --line:#e5e7eb;
+}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:Inter, Pretendard, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial}
+.page{max-width:1100px;margin:24px auto;padding:24px}
+h1{font-size:28px;margin:0 0 8px}
+.sub{color:var(--muted);margin-bottom:16px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(6px);padding:8px 0;z-index:10}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer}
+.tab.active{border-color:var(--accent);box-shadow:0 2px 8px rgba(37,99,235,.15);color:var(--accent)}
+.card{border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 4px 8px rgba(0,0,0,.04)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+.dot{width:14px;height:14px;border-radius:9999px;display:inline-block}
+.section{display:none}
+.section.active{display:block}
+.caption{font-size:13px;color:var(--muted);margin-top:6px}
+/* TIMELINE */
+.timeline .rail{height:8px;background:var(--line);border-radius:9999px;margin:28px 0}
+.timeline .stops{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.stop{text-align:center}
+.stop .icon{font-size:28px}
+.stop .label{margin-top:6px;font-weight:600}
+.stop .note{color:var(--muted);font-size:12px}
+.flows{margin-top:12px}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:center;margin:10px 0}
+.pill{border-radius:9999px;padding:8px 10px;font-weight:600;text-align:center}
+.genes .pill{background:rgba(16,185,129,.12);color:var(--accent-2);border:1px solid rgba(16,185,129,.5)}
+.tax .pill{background:rgba(147,51,234,.10);color:var(--tax);border:1px solid rgba(147,51,234,.45)}
+.inherit .pill{background:rgba(245,158,11,.12);color:var(--inherit);border:1px solid rgba(245,158,11,.5)}
+.risk .pill{background:rgba(239,68,68,.10);color:var(--danger);border:1px solid rgba(239,68,68,.45)}
+.insure .pill{background:rgba(37,99,235,.12);color:var(--accent);border:1px solid rgba(37,99,235,.5)}
+/* SWIMLANE */
+.swim{display:grid;grid-template-columns:140px 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.lane-h{background:#f9fafb;font-weight:700;padding:10px;border-right:1px solid var(--line)}
+.lane-row{display:grid;grid-template-columns:repeat(6,1fr)}
+.lane-row>div{padding:10px;border-top:1px solid var(--line);border-right:1px solid var(--line);font-size:13px}
+.lane-row>div:last-child{border-right:none}
+.badge{display:inline-block;padding:4px 8px;border-radius:9999px;font-size:12px;margin-right:6px;margin-top:6px}
+.b-risk{background:rgba(239,68,68,.10);color:var(--danger);border:1px solid rgba(239,68,68,.3)}
+.b-cover{background:rgba(37,99,235,.10);color:var(--accent);border:1px solid rgba(37,99,235,.3)}
+/* ONION */
+.onion-wrap{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:center}
+@media(max-width:900px){.onion-wrap{grid-template-columns:1fr}}
+svg{max-width:100%;height:auto}
+/* SANKEY */
+.sankey-wrap{display:grid;grid-template-columns:1fr;gap:12px}
+.hint{font-size:12px;color:var(--muted)}
+/* PRINT */
+@page{size:A4;margin:14mm}
+@media print{.nav{display:none}.page{padding:0;margin:0}}

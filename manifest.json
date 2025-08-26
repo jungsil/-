@@ -1,0 +1,16 @@
+{
+  "name": "생애주기 금융 플래너",
+  "short_name": "금융 플래너",
+  "description": "생애주기, 리스크, 보험, 세금, 상속을 시각화하여 보여주는 금융 플래너입니다.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
