@@ -1,3 +1,4 @@
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -8,7 +9,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/index.css',
-  '/index.tsx',
+  '/index.js',
   '/icon.svg',
   '/manifest.json'
 ];
