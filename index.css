@@ -50,3 +50,46 @@ svg{max-width:100%;height:auto}
 /* PRINT */
 @page{size:A4;margin:14mm}
 @media print{.nav{display:none}.page{padding:0;margin:0}}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .page {
+    padding: 16px;
+    margin: 16px auto;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .nav {
+    gap: 6px;
+  }
+  .tab {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  /* 1. TIMELINE */
+  .timeline .stops {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+  .flows {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .flow {
+    display: block; /* Reset grid to stack pills */
+    margin: 0;
+  }
+  
+  /* 2. SWIMLANE - Make it scrollable */
+  #swimlane .card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
+  }
+  #swimlane .swim {
+    min-width: 700px;
+  }
+}
