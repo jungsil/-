@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>재무설계 개요</title>
+  <style>
+    :root{
+      --bg:#ffffff; --fg:#0f172a; --muted:#64748b; --line:#e2e8f0;
+      --brand:#0ea5e9; /* sky-500 */
+      --brand-2:#2563eb; /* blue-600 */
+      --accent:#10b981; /* emerald-500 */
+      --warn:#f59e0b; /* amber-500 */
+      --danger:#ef4444; /* red-500 */
+      --shadow:0 10px 30px rgba(2,6,23,.08);
+    }
+    [data-theme="dark"]{
+      --bg:#0b1220; --fg:#e5e7eb; --muted:#94a3b8; --line:#243244;
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:Inter, Pretendard, "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial}
+    a{color:inherit}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+
+    /* Header */
+    .header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:var(--shadow)}
+    .title-wrap h1{font-size:28px;margin:0}
+    .title-wrap .sub{color:var(--muted);font-size:14px;margin-top:4px}
+    .actions{display:flex;gap:8px}
+    .btn{border:1px solid var(--line);background:transparent;color:var(--fg);padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer}
+    .btn:hover{border-color:var(--brand)}
+
+    /* Hero */
+    .hero{border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin:18px 0;background:linear-gradient(180deg,rgba(14,165,233,.08),rgba(37,99,235,.06))}
+    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;padding:24px}
+    @media(max-width:900px){.hero-inner{grid-template-columns:1fr}}
+    .kicker{display:inline-flex;gap:8px;align-items:center;font-weight:800;letter-spacing:.3px;text-transform:uppercase;font-size:12px;color:var(--brand-2);background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.3);padding:6px 10px;border-radius:999px}
+    .hero h2{font-size:26px;margin:10px 0 6px}
+    .hero p{color:var(--muted);margin:0}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border:1px dashed var(--line);border-radius:12px;font-size:13px;background:rgba(255,255,255,.35)}
+
+    /* Pillars */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow);background:rgba(255,255,255,.4)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+
+    /* Timeline mini */
+    .timeline{border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:16px}
+    .rail{height:6px;background:var(--line);border-radius:999px;margin:12px 0}
+    .stops{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+    .stop{text-align:center}
+    .stop .ico{font-size:22px}
+    .stop .lab{font-size:12px;margin-top:4px}
+
+    /* Footer */
+    .footer{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;margin-top:18px}
+
+    /* Print (A4) */
+    @page{size:A4;margin:14mm}
+    @media print{
+      .actions{display:none}
+      .container{padding:0}
+      .hero{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="title-wrap">
+          <h1>재무설계 개요</h1>
+          <div class="sub">Life-cycle · Risks · Insurance · Taxes · Inheritance</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="toggleTheme()">Dark / Light</button>
+        <button class="btn" onclick="window.print()">Print / PDF</button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" role="region" aria-label="Overview">
+      <div class="hero-inner">
+        <div>
+          <span class="kicker">재무설계의 한 문장</span>
+          <h2>“태어나고 살아 늙고 떠나는 전 과정에서 발생하는 모든 위험을 <u>보험</u>으로 관리하고, 
+            <u>세금</u>과 <u>상속</u>의 흐름 속에 자산을 설계한다.”</h2>
+          <p>부모로부터 생명을 물려받고(유전), 소득을 창출하며(세금), 병·사고·장수·사망의 리스크를 겪고, 
+            마지막엔 자산과 가치를 다음 세대에 잇습니다. 이것을 체계로 엮는 것이 ‘재무설계’입니다.</p>
+          <div class="badges">
+            <span class="badge">🧬 유전/가족력</span>
+            <span class="badge">💸 세금</span>
+            <span class="badge">🏛 상속/증여</span>
+            <span class="badge">⚠️ 리스크</span>
+            <span class="badge">🛡 보험(전가/분산)</span>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🎯 목표/현금흐름</h3>
+            <p>현금흐름·비상자금·목표자금(주택/교육/노후) 정립</p>
+          </div>
+          <div class="card">
+            <h3>🛡 리스크/보험</h3>
+            <p>질병·상해·장수·사망 위험을 보험으로 전가·분산</p>
+          </div>
+          <div class="card">
+            <h3>💼 투자/자산배분</h3>
+            <p>목표·기간·리스크허용도 기반의 장기 자산배분</p>
+          </div>
+          <div class="card">
+            <h3>💳 세금/연금</h3>
+            <p>세전·세후 최적화, 연금/절세 구조 설계</p>
+          </div>
+          <div class="card">
+            <h3>🏥 간병/요양</h3>
+            <p>장기요양·간병 니즈 반영, 가족 돌봄 비용 대비</p>
+          </div>
+          <div class="card">
+            <h3>📜 상속/가업승계</h3>
+            <p>유언·신탁·증여 플랜 및 분쟁 예방 장치</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline (mini) -->
+    <section class="timeline" aria-label="Life cycle">
+      <div style="display:flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.3px;text-transform:uppercase;font-size:12px;color:var(--muted)">LIFE CYCLE</div>
+      <div class="rail"></div>
+      <div class="stops">
+        <div class="stop"><div class="ico">👶</div><div class="lab">출생</div></div>
+        <div class="stop"><div class="ico">🎒</div><div class="lab">성장</div></div>
+        <div class="stop"><div class="ico">💼</div><div class="lab">소득</div></div>
+        <div class="stop"><div class="ico">👨‍👩‍👧‍👦</div><div class="lab">가족</div></div>
+        <div class="stop"><div class="ico">🧓</div><div class="lab">노후</div></div>
+        <div class="stop"><div class="ico">⚰️</div><div class="lab">사망</div></div>
+      </div>
+    </section>
+
+    <!-- Footer / meta -->
+    <footer class="footer">
+      <div>© 2025 Financial Planning Overview · Draft v1.0</div>
+      <div>브랜딩/로고/상품명은 이 페이지에서 바로 교체 가능합니다.</div>
+    </footer>
+  </div>
+
+  <script>
+    function toggleTheme(){
+      const root=document.documentElement;
+      const isDark=root.getAttribute('data-theme')==='dark';
+      root.setAttribute('data-theme', isDark? 'light':'dark');
+      try{ localStorage.setItem('theme', isDark? 'light':'dark'); }catch(e){}
+    }
+    // persist theme
+    (function(){
+      try{ const t=localStorage.getItem('theme'); if(t){ document.documentElement.setAttribute('data-theme', t); } }catch(e){}
+    })();
+  </script>
+</body>
+</html>
