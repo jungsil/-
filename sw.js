@@ -6,12 +6,12 @@
 
 const CACHE_NAME = 'financial-planner-cache-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/index.css',
-  '/index.js',
-  '/icon.svg',
-  '/manifest.json'
+  './',
+  'index.html',
+  'index.css',
+  'index.js',
+  'icon.svg',
+  'manifest.json'
 ];
 
 // Install a service worker
