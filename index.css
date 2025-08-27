@@ -27,6 +27,7 @@ h1{font-size:28px;margin:0 0 8px}
 .flows{margin-top:12px}
 .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;align-items:center;margin:10px 0}
 .pill{border-radius:9999px;padding:8px 10px;font-weight:600;text-align:center}
+#genes-pill {cursor: pointer;}
 .genes .pill{background:rgba(16,185,129,.12);color:var(--accent-2);border:1px solid rgba(16,185,129,.5)}
 .tax .pill{background:rgba(147,51,234,.10);color:var(--tax);border:1px solid rgba(147,51,234,.45)}
 .inherit .pill{background:rgba(245,158,11,.12);color:var(--inherit);border:1px solid rgba(245,158,11,.5)}
@@ -43,58 +44,109 @@ h1{font-size:28px;margin:0 0 8px}
 .b-cover{background:rgba(37,99,235,.10);color:var(--accent);border:1px solid rgba(37,99,235,.3)}
 /* ONION */
 .onion-wrap{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:center}
-@media(max-width:900px){.onion-wrap{grid-template-columns:1fr}}
 svg{max-width:100%;height:auto}
-/* SANKEY */
-.sankey-wrap{display:grid;grid-template-columns:1fr;gap:12px}
-.hint{font-size:12px;color:var(--muted)}
+/* MODAL STYLES */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;z-index:1000;padding:16px}
+.modal-overlay.active{display:flex}
+.modal-content{background:var(--bg);padding:24px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.15);max-width:500px;width:100%;position:relative;animation:modal-fade-in .3s ease-out}
+.modal-content h2{font-size:22px;margin-top:0;margin-bottom:16px}
+.modal-content h3{font-size:16px;margin-top:20px;margin-bottom:8px;color:var(--ink)}
+.modal-content p{font-size:15px;color:var(--muted);line-height:1.6;margin:0}
+.modal-close{position:absolute;top:12px;right:12px;background:transparent;border:none;font-size:28px;line-height:1;color:var(--muted);cursor:pointer;padding:4px}
+.modal-close:hover{color:var(--ink)}
+@keyframes modal-fade-in{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
 /* PRINT */
 @page{size:A4;margin:14mm}
 @media print{.nav{display:none}.page{padding:0;margin:0}}
 
 /* RESPONSIVE STYLES */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .page {
-    padding: 16px;
-    margin: 16px auto;
+    padding: 24px 16px;
+    margin: 0;
   }
   h1 {
     font-size: 24px;
+    text-align: center;
+  }
+  .sub {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
   }
   .nav {
     gap: 6px;
+    padding: 8px 16px;
+    justify-content: center;
   }
   .tab {
-    padding: 6px 12px;
+    padding: 8px 14px;
     font-size: 14px;
+  }
+  .card {
+    padding: 16px;
+    margin: 20px 0;
   }
 
   /* 1. TIMELINE */
   .timeline .stops {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 24px;
   }
   .flows {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     margin-top: 24px;
   }
   .flow {
-    display: block; /* Reset grid to stack pills */
+    display: block;
     margin: 0;
+    text-align: center;
+  }
+  .flow .pill {
+    display: inline-block;
+    width: auto;
+    padding: 10px 14px;
   }
   
   /* 2. SWIMLANE - Make it scrollable */
   #swimlane .card {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
-    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
   #swimlane .card::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none;
   }
   #swimlane .swim {
     min-width: 700px;
+  }
+
+  /* 3. ONION */
+  .onion-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .onion-wrap svg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+  .onion-wrap > div {
+    text-align: center;
+  }
+  .onion-wrap h3 {
+    font-size: 20px;
+  }
+  .onion-wrap p {
+    font-size: 14px;
+  }
+  .onion-wrap ul {
+    display: inline-block;
+    text-align: left;
+    margin-top: 16px;
+    padding-left: 24px;
   }
 }

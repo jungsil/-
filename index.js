@@ -44,4 +44,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
   }
+
+  // Modal logic for Genes/Family History
+  const genesPill = document.getElementById('genes-pill');
+  const modalOverlay = document.getElementById('genes-modal-overlay');
+
+  if (genesPill && modalOverlay) {
+    const modalContent = modalOverlay.querySelector('.modal-content');
+    const modalCloseButton = modalOverlay.querySelector('.modal-close');
+
+    const openModal = () => {
+      modalOverlay.classList.add('active');
+    };
+
+    const closeModal = () => {
+      modalOverlay.classList.remove('active');
+    };
+
+    genesPill.addEventListener('click', openModal);
+    
+    if (modalCloseButton) {
+      modalCloseButton.addEventListener('click', closeModal);
+    }
+
+    // Close modal if user clicks on the overlay background
+    modalOverlay.addEventListener('click', (event) => {
+      if (event.target === modalOverlay) {
+        closeModal();
+      }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  }
 });

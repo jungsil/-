@@ -2,9 +2,9 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-t-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>생애주기 × 리스크 × 보험 × 세금 × 상속 — 4가지 인포그래픽</title>
+<title>생애주기 × 리스크 × 보험 × 세금 × 상속 — 3가지 인포그래픽</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2563eb"/>
 <link rel="stylesheet" href="index.css">
@@ -13,15 +13,14 @@
 </head>
 <body>
 <main class="page">
-<h1>생애주기 × 리스크 × 보험 × 세금 × 상속 — 시각화 4종</h1>
+<h1>생애주기 × 리스크 × 보험 × 세금 × 상속 — 시각화 3종</h1>
 <div class="sub">메시지: “사람은 태어나(유전·가족력) 소득을 벌고(세금), 병들고 늙고(리스크) 끝내 떠나며(상속), 보험으로 모든 위험을 관리한다.”</div>
 
 
 <nav class="nav" role="tablist" aria-label="Infographics Navigation">
-<button id="tab-timeline" class="tab active" data-target="timeline" role="tab" aria-controls="timeline" aria-selected="true">1) 인생 타임라인 겹침형</button>
-<button id="tab-swimlane" class="tab" data-target="swimlane" role="tab" aria-controls="swimlane" aria-selected="false">2) 세대 스윔레인</button>
-<button id="tab-onion" class="tab" data-target="onion" role="tab" aria-controls="onion" aria-selected="false">3) 자산 양파 모델</button>
-<button id="tab-sankey" class="tab" data-target="sankey" role="tab" aria-controls="sankey" aria-selected="false">4) 상속 생키 다이어그램</button>
+<button id="tab-timeline" class="tab active" data-target="timeline" role="tab" aria-controls="timeline" aria-selected="true">🧍 인생 타임라인</button>
+<button id="tab-swimlane" class="tab" data-target="swimlane" role="tab" aria-controls="swimlane" aria-selected="false">🌊 세대 스윔레인</button>
+<button id="tab-onion" class="tab" data-target="onion" role="tab" aria-controls="onion" aria-selected="false">💰 자산 모델</button>
 </nav>
 
 <!-- 1. TIMELINE -->
@@ -73,7 +72,7 @@
 
 <div class="flows">
 <div class="flow genes">
-<div class="pill" style="grid-column: 1 / span 1;">유전/가족력</div>
+<div id="genes-pill" class="pill" style="grid-column: 1 / span 1;">유전/가족력</div>
 </div>
 <div class="flow risk">
 <div class="pill" style="grid-column: 1 / span 6;">3대질병, 상해, 장수 리스크</div>
@@ -207,53 +206,20 @@
 <div class="caption">자산을 4겹의 양파에 비유하여, 가장 안쪽의 보장자산(보험)이 전체 자산을 지키는 핵심임을 강조.</div>
 </section>
 
-<!-- 4. SANKEY -->
-<section id="sankey" class="section" role="tabpanel" aria-labelledby="tab-sankey">
-<div class="card">
-<svg viewBox="0 0 600 250">
-<defs>
-<linearGradient id="tax-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-<stop offset="0%" style="stop-color:var(--tax);stop-opacity:0.7" />
-<stop offset="100%" style="stop-color:var(--tax);stop-opacity:0.5" />
-</linearGradient>
-<linearGradient id="inherit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-<stop offset="0%" style="stop-color:var(--inherit);stop-opacity:0.7" />
-<stop offset="100%" style="stop-color:var(--inherit);stop-opacity:0.5" />
-</linearGradient>
-<linearGradient id="insure-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-<stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.7" />
-<stop offset="100%" style="stop-color:var(--accent);stop-opacity:0.5" />
-</linearGradient>
-</defs>
-<!-- Nodes -->
-<rect x="20" y="60" width="120" height="40" rx="4" fill="#f3f4f6"/>
-<text x="80" y="85" text-anchor="middle">사망보험금</text>
-<rect x="20" y="150" width="120" height="40" rx="4" fill="#f3f4f6"/>
-<text x="80" y="175" text-anchor="middle">상속재산</text>
-
-<rect x="240" y="105" width="120" height="40" rx="4" fill="#f3f4f6"/>
-<text x="300" y="130" text-anchor="middle">상속세 납부</text>
-
-<rect x="460" y="150" width="120" height="40" rx="4" fill="#f3f4f6"/>
-<text x="520" y="175" text-anchor="middle">상속인 수령</text>
-
-<!-- Flows -->
-<path d="M 140 170 C 190 170, 190 190, 240 190 L 240 160 C 190 160, 190 170, 140 170 Z" fill="url(#inherit-grad)" />
-<path d="M 140 170 C 190 170, 190 125, 240 125 L 240 115 C 190 115, 190 160, 140 160 Z" fill="url(#tax-grad)" />
-<path d="M 140 80 C 190 80, 190 115, 240 115 L 240 125 C 190 125, 190 90, 140 90 Z" fill="url(#insure-grad)" />
-
-<path d="M 360 175 C 410 175, 410 170, 460 170 L 460 180 C 410 180, 410 185, 360 185 Z" fill="url(#inherit-grad)" />
-
-<!-- Labels -->
-<text class="hint" x="180" y="145">상속세</text>
-<text class="hint" x="180" y="105">보험금 활용</text>
-<text class="hint" x="180" y="205">상속인 몫</text>
-</svg>
-</div>
-<div class="caption">상속 과정에서 재산이 어떻게 분배되는지를 생키(Sankey) 다이어그램으로 시각화. 사망보험금을 상속세 재원으로 활용하여 상속재산을 온전히 보전하는 효과를 보여줌.</div>
-</section>
-
 </main>
+
+<!-- Modal for Genes/Family History -->
+<div id="genes-modal-overlay" class="modal-overlay">
+  <div id="genes-modal" class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close modal">&times;</button>
+    <h2 id="modal-title">유전/가족력 정보</h2>
+    <h3>유전력 질환</h3>
+    <p>혈우병, 적녹색맹 등</p>
+    <h3>가족력 질환</h3>
+    <p>고혈압, 당뇨병, 고지혈증, 뇌졸중, 골다공증, 심장병, 탈모, 암, 치매</p>
+  </div>
+</div>
+
 <script type="module" src="index.js"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
