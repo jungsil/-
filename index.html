@@ -138,16 +138,17 @@
 </div>
 <div>
 <span class="badge b-risk">3대질병</span>
-<span class="badge b-risk">소득상실</span>
 <span class="badge b-cover">건강보험</span>
 <span class="badge b-cover">종신보험</span>
 </div>
 <div>
-<span class="badge b-risk">은퇴준비</span>
-<span class="badge b-cover">연금/저축보험</span>
+<span class="badge b-risk">은퇴</span>
+<span class="badge b-cover">연금</span>
 </div>
 <div></div>
-<div></div>
+<div>
+<span class="badge b-cover">상속 플랜</span>
+</div>
 </div>
 </div>
 
@@ -155,7 +156,7 @@
 <div>
 <div class="lane-row">
 <div>
-<span class="badge b-risk">상해/질병</span>
+<span class="badge b-risk">각종상해</span>
 <span class="badge b-cover">어린이보험</span>
 </div>
 <div></div>
@@ -167,52 +168,44 @@
 </div>
 </div>
 </div>
-<div class="caption">3세대의 생애주기를 스윔레인(swimlane)으로 구분하여 세대별 주요 리스크와 필요한 보험을 한 눈에 비교.</div>
+<div class="caption">3세대(조부모, 부모, 자녀)의 생애주기를 스윔레인(swimlane) 형태로 나란히 표시. 세대 간 상호작용과 시간의 흐름에 따른 리스크 변화를 한눈에 파악.</div>
 </section>
 
 <!-- 3. ONION -->
 <section id="onion" class="section" role="tabpanel" aria-labelledby="tab-onion">
-<div class="card">
-<div class="onion-wrap">
-<svg viewBox="0 0 400 300">
-<defs>
-<filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.1"/>
-</filter>
-</defs>
-<g transform="translate(160, 150)" filter="url(#shadow)">
-<circle cx="0" cy="0" r="140" fill="#f3f4f6"/>
-<text x="0" y="-120" text-anchor="middle" font-size="12" fill="var(--muted)">현금흐름</text>
-<circle cx="0" cy="0" r="105" fill="#e5e7eb"/>
-<text x="0" y="-85" text-anchor="middle" font-size="12" fill="var(--muted)">투자자산</text>
-<circle cx="0" cy="0" r="70" fill="#d1d5db"/>
-<text x="0" y="-50" text-anchor="middle" font-size="12" fill="var(--muted)">은퇴자산</text>
-<circle cx="0" cy="0" r="35" fill="var(--accent)"/>
-<text x="0" y="4" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">보장자산</text>
-</g>
-</svg>
+<div class="card onion-wrap">
 <div>
-<h3>자산의 4가지 유형 (양파 모델)</h3>
-<p style="font-size:14px;color:var(--muted)">자산을 양파처럼 4겹으로 나누어 안정성의 중요도 순으로 배열. 가장 안쪽의 보장자산(보험)이 모든 자산의 기초가 됨을 시각화.</p>
-<ul style="font-size:14px;line-height:1.7;padding-left:20px">
-<li><b>보장자산:</b> 질병, 사망 등 예측불가한 위험으로부터 가족과 자산을 지키는 최후의 보루. (종신/건강보험)</li>
-<li><b>은퇴자산:</b> 안정적인 노후생활을 위한 필수 자금. (연금보험, 퇴직연금)</li>
-<li><b>투자자산:</b> 적극적인 수익 창출을 위한 자금. (주식, 펀드, 부동산)</li>
-<li><b>현금흐름:</b> 일상적인 소비와 단기 목적을 위한 유동성 자금. (예적금, CMA)</li>
+<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+<circle cx="160" cy="160" r="155" fill="#fefce8" stroke="#facc15" stroke-width="2"/>
+<circle cx="160" cy="160" r="115" fill="#f0f9ff" stroke="#38bdf8" stroke-width="2"/>
+<circle cx="160" cy="160" r="75" fill="#fdf2f8" stroke="#f472b6" stroke-width="2"/>
+<circle cx="160" cy="160" r="35" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+<text x="160" y="162" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#15803d">1순위</text>
+<text x="160" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#be185d">2순위</text>
+<text x="160" y="65" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">3순위</text>
+<text x="160" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">4순위</text>
+</svg>
+</div>
+<div>
+<h3>자산 배분 양파 모델</h3>
+<p>가장 안쪽(1순위)부터 바깥쪽(4순위)으로 자산을 배분하는 모델. 안쪽일수록 더 중요하고 기본적인 자산.</p>
+<ul>
+<li><b>1순위(초록):</b> 보장자산 - 위험 대비 (보험)</li>
+<li><b>2순위(분홍):</b> 은퇴자산 - 노후 대비 (연금)</li>
+<li><b>3순위(파랑):</b> 투자자산 - 자산 증식 (펀드, 주식)</li>
+<li><b>4순위(노랑):</b> 상속자산 - 자산 이전 (증여, 상속)</li>
 </ul>
 </div>
 </div>
-</div>
-<div class="caption">자산을 4겹의 양파에 비유하여, 가장 안쪽의 보장자산(보험)이 전체 자산을 지키는 핵심임을 강조.</div>
+<div class="caption">자산의 중요도와 목적에 따라 4단계(보장, 은퇴, 투자, 상속)로 나누어 양파 껍질처럼 시각화. 자산 포트폴리오의 우선순위를 쉽게 이해.</div>
 </section>
-
 </main>
 
-<!-- Modal for Genes/Family History -->
-<div id="genes-modal-overlay" class="modal-overlay">
-  <div id="genes-modal" class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<!-- GENES/FAMILY HISTORY MODAL -->
+<div id="genes-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-content">
     <button class="modal-close" aria-label="Close modal">&times;</button>
-    <h2 id="modal-title">유전/가족력 정보</h2>
+    <h2 id="modal-title">유전·가족력 정보</h2>
     <h3>유전력 질환</h3>
     <p>혈우병, 적녹색맹 등</p>
     <h3>가족력 질환</h3>
@@ -220,7 +213,7 @@
   </div>
 </div>
 
-<script type="module" src="index.js"></script>
+<script src="index.js" defer></script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
