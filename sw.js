@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
 */
 
-const CACHE_NAME = 'financial-planner-cache-v1';
+const CACHE_NAME = 'financial-planner-cache-v2';
 const urlsToCache = [
   './',
   'index.html',
