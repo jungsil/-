@@ -5,24 +5,42 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Main navigation logic
+  const mainNavItems = document.querySelectorAll('.main-nav-item');
+  const mainContentSections = document.querySelectorAll('.content-section');
+
+  mainNavItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = item.dataset.target;
+      if (!targetId) return;
+
+      mainNavItems.forEach(i => i.classList.remove('active'));
+      mainContentSections.forEach(s => s.classList.remove('active'));
+
+      item.classList.add('active');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.add('active');
+      }
+    });
+  });
+
+  // Sub-navigation (tabs) logic
   const tabs = document.querySelectorAll('.tab');
   const sections = document.querySelectorAll('.section');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // The 'as HTMLElement' is TypeScript syntax, which is invalid in a JavaScript file.
-      // We can safely access the dataset property directly on the tab element.
       const targetId = tab.dataset.target;
       if (!targetId) return;
 
-      // Deactivate all tabs and sections
       tabs.forEach(t => {
         t.classList.remove('active');
         t.setAttribute('aria-selected', 'false');
       });
       sections.forEach(s => s.classList.remove('active'));
 
-      // Activate the clicked tab and corresponding section
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
       const targetSection = document.getElementById(targetId);
@@ -67,14 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
       modalCloseButton.addEventListener('click', closeModal);
     }
 
-    // Close modal if user clicks on the overlay background
     modalOverlay.addEventListener('click', (event) => {
       if (event.target === modalOverlay) {
         closeModal();
       }
     });
     
-    // Close modal with Escape key
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
         closeModal();

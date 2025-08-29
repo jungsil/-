@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-t-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>생애주기 × 리스크 × 보험 × 세금 × 상속 — 3가지 인포그래픽</title>
+<title>생애주기 × 리스크 × 보험 × 세금 × 상속</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2563eb"/>
 <link rel="stylesheet" href="index.css">
@@ -12,194 +12,227 @@
 <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-<main class="page">
-<h1>생애주기 × 리스크 × 보험 × 세금 × 상속 — 시각화 3종</h1>
-<div class="sub">메시지: “사람은 태어나(유전·가족력) 소득을 벌고(세금), 병들고 늙고(리스크) 끝내 떠나며(상속), 보험으로 모든 위험을 관리한다.”</div>
+<header class="top-header">
+  <nav class="main-nav" aria-label="Main navigation">
+    <a href="#" class="main-nav-item active" data-target="life-plan">라이프플랜</a>
+    <a href="#" class="main-nav-item" data-target="life-disease">라이프&질병</a>
+    <a href="#" class="main-nav-item" data-target="life-oldage">라이프&노년</a>
+    <a href="#" class="main-nav-item" data-target="life-risk">라이프&리스크</a>
+  </nav>
+</header>
 
+<div class="content-container">
+  <section id="life-plan" class="content-section active">
+    <main class="page">
+      <h1>생애주기 × 리스크 × 보험 × 세금 × 상속</h1>
+      <div class="sub">메시지: “사람은 태어나(유전·가족력) 소득을 벌고(세금), 병들고 늙고(리스크) 끝내 떠나며(상속), 보험으로 모든 위험을 관리한다.”</div>
 
-<nav class="nav" role="tablist" aria-label="Infographics Navigation">
-<button id="tab-timeline" class="tab active" data-target="timeline" role="tab" aria-controls="timeline" aria-selected="true">🧍 인생 타임라인</button>
-<button id="tab-swimlane" class="tab" data-target="swimlane" role="tab" aria-controls="swimlane" aria-selected="false">🌊 세대 스윔레인</button>
-<button id="tab-onion" class="tab" data-target="onion" role="tab" aria-controls="onion" aria-selected="false">💰 자산 모델</button>
-</nav>
+      <nav class="nav" role="tablist" aria-label="Infographics Navigation">
+        <button id="tab-timeline" class="tab active" data-target="timeline" role="tab" aria-controls="timeline" aria-selected="true">🧍 인생 타임라인</button>
+        <button id="tab-swimlane" class="tab" data-target="swimlane" role="tab" aria-controls="swimlane" aria-selected="false">🌊 세대 스윔레인</button>
+        <button id="tab-onion" class="tab" data-target="onion" role="tab" aria-controls="onion" aria-selected="false">💰 자산 모델</button>
+      </nav>
 
-<!-- 1. TIMELINE -->
-<section id="timeline" class="section active" role="tabpanel" aria-labelledby="tab-timeline">
-<div class="card">
-<div class="legend">
-<span><span class="dot" style="background:var(--accent-2)"></span> 유전·가족력</span>
-<span><span class="dot" style="background:var(--danger)"></span> 리스크</span>
-<span><span class="dot" style="background:var(--accent)"></span> 보험</span>
-<span><span class="dot" style="background:var(--tax)"></span> 세금</span>
-<span><span class="dot" style="background:var(--inherit)"></span> 상속</span>
-</div>
+      <!-- 1. TIMELINE -->
+      <section id="timeline" class="section active" role="tabpanel" aria-labelledby="tab-timeline">
+      <div class="card">
+      <div class="legend">
+      <span><span class="dot" style="background:var(--accent-2)"></span> 유전·가족력</span>
+      <span><span class="dot" style="background:var(--danger)"></span> 리스크</span>
+      <span><span class="dot" style="background:var(--accent)"></span> 보험</span>
+      <span><span class="dot" style="background:var(--tax)"></span> 세금</span>
+      <span><span class="dot" style="background:var(--inherit)"></span> 상속</span>
+      </div>
 
-<div class="timeline">
-<div class="rail"></div>
-<div class="stops">
-<div class="stop">
-<div class="icon">👶</div>
-<div class="label">출생·유년</div>
-<div class="note">0~19세</div>
-</div>
-<div class="stop">
-<div class="icon">🧑‍🎓</div>
-<div class="label">청년</div>
-<div class="note">20~39세</div>
-</div>
-<div class="stop">
-<div class="icon">👨‍👩‍👧‍👦</div>
-<div class="label">중년</div>
-<div class="note">40~59세</div>
-</div>
-<div class="stop">
-<div class="icon">🧑‍🦳</div>
-<div class="label">장년</div>
-<div class="note">60~79세</div>
-</div>
-<div class="stop">
-<div class="icon">👴</div>
-<div class="label">노년</div>
-<div class="note">80세 이상</div>
-</div>
-<div class="stop">
-<div class="icon">⚰️</div>
-<div class="label">사망·상속</div>
-<div class="note">언제든</div>
-</div>
-</div>
-</div>
+      <div class="timeline">
+      <div class="rail"></div>
+      <div class="stops">
+      <div class="stop">
+      <div class="icon">👶</div>
+      <div class="label">출생·유년</div>
+      <div class="note">0~19세</div>
+      </div>
+      <div class="stop">
+      <div class="icon">🧑‍🎓</div>
+      <div class="label">청년</div>
+      <div class="note">20~39세</div>
+      </div>
+      <div class="stop">
+      <div class="icon">👨‍👩‍👧‍👦</div>
+      <div class="label">중년</div>
+      <div class="note">40~59세</div>
+      </div>
+      <div class="stop">
+      <div class="icon">🧑‍🦳</div>
+      <div class="label">장년</div>
+      <div class="note">60~79세</div>
+      </div>
+      <div class="stop">
+      <div class="icon">👴</div>
+      <div class="label">노년</div>
+      <div class="note">80세 이상</div>
+      </div>
+      <div class="stop">
+      <div class="icon">⚰️</div>
+      <div class="label">사망·상속</div>
+      <div class="note">언제든</div>
+      </div>
+      </div>
+      </div>
 
-<div class="flows">
-<div class="flow genes">
-<div id="genes-pill" class="pill" style="grid-column: 1 / span 1;">유전/가족력</div>
-</div>
-<div class="flow risk">
-<div class="pill" style="grid-column: 1 / span 6;">3대질병, 상해, 장수 리스크</div>
-</div>
-<div class="flow insure">
-<div class="pill" style="grid-column: 1 / span 6;">건강/종신보험</div>
-</div>
-<div class="flow tax">
-<div class="pill" style="grid-column: 2 / span 4;">소득세·법인세</div>
-</div>
-<div class="flow inherit">
-<div class="pill" style="grid-column: 6 / span 1;">상속세·증여세</div>
-</div>
-</div>
-</div>
-<div class="caption">생애 타임라인 위에 5가지 주제(유전, 리스크, 보험, 세금, 상속)를 겹쳐 표시. 각 주제가 인생의 어느 시점에 주로 발생하는지 직관적으로 파악.</div>
-</section>
+      <div class="flows">
+      <div class="flow genes">
+      <div id="genes-pill" class="pill" style="grid-column: 1 / span 1;">유전/가족력</div>
+      </div>
+      <div class="flow risk">
+      <div class="pill" style="grid-column: 1 / span 6;">3대질병, 상해, 장수 리스크</div>
+      </div>
+      <div class="flow insure">
+      <div class="pill" style="grid-column: 1 / span 6;">건강/종신보험</div>
+      </div>
+      <div class="flow tax">
+      <div class="pill" style="grid-column: 2 / span 4;">소득세·법인세</div>
+      </div>
+      <div class="flow inherit">
+      <div class="pill" style="grid-column: 6 / span 1;">상속세·증여세</div>
+      </div>
+      </div>
+      </div>
+      <div class="caption">생애 타임라인 위에 5가지 주제(유전, 리스크, 보험, 세금, 상속)를 겹쳐 표시. 각 주제가 인생의 어느 시점에 주로 발생하는지 직관적으로 파악.</div>
+      </section>
 
-<!-- 2. SWIMLANE -->
-<section id="swimlane" class="section" role="tabpanel" aria-labelledby="tab-swimlane">
-<div class="card">
-<div class="swim">
-<div class="lane-h"></div>
-<div class="lane-h">
-<div class="lane-row">
-<div>유년</div>
-<div>청년</div>
-<div>중년</div>
-<div>장년</div>
-<div>노년</div>
-<div>사망/상속</div>
-</div>
-</div>
+      <!-- 2. SWIMLANE -->
+      <section id="swimlane" class="section" role="tabpanel" aria-labelledby="tab-swimlane">
+      <div class="card">
+      <div class="swim">
+      <div class="lane-h"></div>
+      <div class="lane-h">
+      <div class="lane-row">
+      <div>유년</div>
+      <div>청년</div>
+      <div>중년</div>
+      <div>장년</div>
+      <div>노년</div>
+      <div>사망/상속</div>
+      </div>
+      </div>
 
-<div class="lane-h">조부모</div>
-<div>
-<div class="lane-row">
-<div></div>
-<div></div>
-<div></div>
-<div>
-<span class="badge b-risk">건강악화</span>
-<span class="badge b-risk">치매</span>
-</div>
-<div>
-<span class="badge b-risk">장수 리스크</span>
-<span class="badge b-cover">간병보험</span>
-<span class="badge b-cover">연금보험</span>
-</div>
-<div>
-<span class="badge b-cover">상속 플랜</span>
-</div>
-</div>
-</div>
+      <div class="lane-h">조부모</div>
+      <div>
+      <div class="lane-row">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>
+      <span class="badge b-risk">건강악화</span>
+      <span class="badge b-risk">치매</span>
+      </div>
+      <div>
+      <span class="badge b-risk">장수 리스크</span>
+      <span class="badge b-cover">간병보험</span>
+      <span class="badge b-cover">연금보험</span>
+      </div>
+      <div>
+      <span class="badge b-cover">상속 플랜</span>
+      </div>
+      </div>
+      </div>
 
-<div class="lane-h">부모</div>
-<div>
-<div class="lane-row">
-<div></div>
-<div>
-<span class="badge b-risk">사회초년</span>
-<span class="badge b-cover">실손보험</span>
-</div>
-<div>
-<span class="badge b-risk">3대질병</span>
-<span class="badge b-cover">건강보험</span>
-<span class="badge b-cover">종신보험</span>
-</div>
-<div>
-<span class="badge b-risk">은퇴</span>
-<span class="badge b-cover">연금</span>
-</div>
-<div></div>
-<div>
-<span class="badge b-cover">상속 플랜</span>
-</div>
-</div>
-</div>
+      <div class="lane-h">부모</div>
+      <div>
+      <div class="lane-row">
+      <div></div>
+      <div>
+      <span class="badge b-risk">사회초년</span>
+      <span class="badge b-cover">실손보험</span>
+      </div>
+      <div>
+      <span class="badge b-risk">3대질병</span>
+      <span class="badge b-cover">건강보험</span>
+      <span class="badge b-cover">종신보험</span>
+      </div>
+      <div>
+      <span class="badge b-risk">은퇴</span>
+      <span class="badge b-cover">연금</span>
+      </div>
+      <div></div>
+      <div>
+      <span class="badge b-cover">상속 플랜</span>
+      </div>
+      </div>
+      </div>
 
-<div class="lane-h">자녀</div>
-<div>
-<div class="lane-row">
-<div>
-<span class="badge b-risk">각종상해</span>
-<span class="badge b-cover">어린이보험</span>
-</div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-</div>
-</div>
-</div>
-</div>
-<div class="caption">3세대(조부모, 부모, 자녀)의 생애주기를 스윔레인(swimlane) 형태로 나란히 표시. 세대 간 상호작용과 시간의 흐름에 따른 리스크 변화를 한눈에 파악.</div>
-</section>
+      <div class="lane-h">자녀</div>
+      <div>
+      <div class="lane-row">
+      <div>
+      <span class="badge b-risk">각종상해</span>
+      <span class="badge b-cover">어린이보험</span>
+      </div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="caption">3세대(조부모, 부모, 자녀)의 생애주기를 스윔레인(swimlane) 형태로 나란히 표시. 세대 간 상호작용과 시간의 흐름에 따른 리스크 변화를 한눈에 파악.</div>
+      </section>
 
-<!-- 3. ONION -->
-<section id="onion" class="section" role="tabpanel" aria-labelledby="tab-onion">
-<div class="card onion-wrap">
-<div>
-<svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
-<circle cx="160" cy="160" r="155" fill="#fefce8" stroke="#facc15" stroke-width="2"/>
-<circle cx="160" cy="160" r="115" fill="#f0f9ff" stroke="#38bdf8" stroke-width="2"/>
-<circle cx="160" cy="160" r="75" fill="#fdf2f8" stroke="#f472b6" stroke-width="2"/>
-<circle cx="160" cy="160" r="35" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
-<text x="160" y="162" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#15803d">1순위</text>
-<text x="160" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#be185d">2순위</text>
-<text x="160" y="65" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">3순위</text>
-<text x="160" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">4순위</text>
-</svg>
+      <!-- 3. ONION -->
+      <section id="onion" class="section" role="tabpanel" aria-labelledby="tab-onion">
+      <div class="card onion-wrap">
+      <div>
+      <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="160" cy="160" r="155" fill="#fefce8" stroke="#facc15" stroke-width="2"/>
+      <circle cx="160" cy="160" r="115" fill="#f0f9ff" stroke="#38bdf8" stroke-width="2"/>
+      <circle cx="160" cy="160" r="75" fill="#fdf2f8" stroke="#f472b6" stroke-width="2"/>
+      <circle cx="160" cy="160" r="35" fill="#ecfdf5" stroke="#34d399" stroke-width="2"/>
+      <text x="160" y="162" text-anchor="middle" dominant-baseline="middle" font-size="14" font-weight="bold" fill="#15803d">1순위</text>
+      <text x="160" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#be185d">2순위</text>
+      <text x="160" y="65" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">3순위</text>
+      <text x="160" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">4순위</text>
+      </svg>
+      </div>
+      <div>
+      <h3>자산 배분 양파 모델</h3>
+      <p>가장 안쪽(1순위)부터 바깥쪽(4순위)으로 자산을 배분하는 모델. 안쪽일수록 더 중요하고 기본적인 자산.</p>
+      <ul>
+      <li><b>1순위(초록):</b> 보장자산 - 위험 대비 (보험)</li>
+      <li><b>2순위(분홍):</b> 은퇴자산 - 노후 대비 (연금)</li>
+      <li><b>3순위(파랑):</b> 투자자산 - 자산 증식 (펀드, 주식)</li>
+      <li><b>4순위(노랑):</b> 상속자산 - 자산 이전 (증여, 상속)</li>
+      </ul>
+      </div>
+      </div>
+      <div class="caption">자산의 중요도와 목적에 따라 4단계(보장, 은퇴, 투자, 상속)로 나누어 양파 껍질처럼 시각화. 자산 포트폴리오의 우선순위를 쉽게 이해.</div>
+      </section>
+    </main>
+  </section>
+
+  <section id="life-disease" class="content-section">
+    <main class="page">
+      <h1>라이프&질병</h1>
+      <p class="sub">콘텐츠 준비중입니다.</p>
+    </main>
+  </section>
+
+  <section id="life-oldage" class="content-section">
+    <main class="page">
+      <h1>라이프&노년</h1>
+      <p class="sub">콘텐츠 준비중입니다.</p>
+    </main>
+  </section>
+
+  <section id="life-risk" class="content-section">
+    <main class="page">
+      <h1>라이프&리스크</h1>
+      <p class="sub">콘텐츠 준비중입니다.</p>
+    </main>
+  </section>
 </div>
-<div>
-<h3>자산 배분 양파 모델</h3>
-<p>가장 안쪽(1순위)부터 바깥쪽(4순위)으로 자산을 배분하는 모델. 안쪽일수록 더 중요하고 기본적인 자산.</p>
-<ul>
-<li><b>1순위(초록):</b> 보장자산 - 위험 대비 (보험)</li>
-<li><b>2순위(분홍):</b> 은퇴자산 - 노후 대비 (연금)</li>
-<li><b>3순위(파랑):</b> 투자자산 - 자산 증식 (펀드, 주식)</li>
-<li><b>4순위(노랑):</b> 상속자산 - 자산 이전 (증여, 상속)</li>
-</ul>
-</div>
-</div>
-<div class="caption">자산의 중요도와 목적에 따라 4단계(보장, 은퇴, 투자, 상속)로 나누어 양파 껍질처럼 시각화. 자산 포트폴리오의 우선순위를 쉽게 이해.</div>
-</section>
-</main>
 
 <!-- GENES/FAMILY HISTORY MODAL -->
 <div id="genes-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
