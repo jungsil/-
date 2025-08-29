@@ -13,18 +13,18 @@
 </head>
 <body>
 <header class="top-header">
-  <nav class="main-nav" aria-label="Main navigation">
-    <a href="#" class="main-nav-item active" data-target="life-plan">라이프플랜</a>
-    <a href="#" class="main-nav-item" data-target="life-disease">라이프&질병</a>
-    <a href="#" class="main-nav-item" data-target="life-oldage">라이프&노년</a>
-    <a href="#" class="main-nav-item" data-target="life-risk">라이프&리스크</a>
+  <nav class="main-nav" role="tablist" aria-label="Main navigation">
+    <button class="main-nav-item active" data-target="life-plan" role="tab" aria-selected="true" aria-controls="life-plan">라이프플랜</button>
+    <button class="main-nav-item" data-target="life-disease" role="tab" aria-selected="false" aria-controls="life-disease">라이프&질병</button>
+    <button class="main-nav-item" data-target="life-oldage" role="tab" aria-selected="false" aria-controls="life-oldage">라이프&노년</button>
+    <button class="main-nav-item" data-target="life-risk" role="tab" aria-selected="false" aria-controls="life-risk">라이프&리스크</button>
   </nav>
 </header>
 
 <div class="content-container">
-  <section id="life-plan" class="content-section active">
+  <section id="life-plan" class="content-section active" role="tabpanel" aria-labelledby="life-plan-tab">
     <main class="page">
-      <h1>생애주기 × 리스크 × 보험 × 세금 × 상속</h1>
+      <h1>생애주기 × 리스크 × 보험<br class="mobile-only"> × 세금 × 상속</h1>
       <div class="sub">메시지: “사람은 태어나(유전·가족력) 소득을 벌고(세금), 병들고 늙고(리스크) 끝내 떠나며(상속), 보험으로 모든 위험을 관리한다.”</div>
 
       <nav class="nav" role="tablist" aria-label="Infographics Navigation">
@@ -212,21 +212,35 @@
     </main>
   </section>
 
-  <section id="life-disease" class="content-section">
+  <section id="life-disease" class="content-section" role="tabpanel" aria-labelledby="life-disease-tab">
     <main class="page">
-      <h1>라이프&질병</h1>
-      <p class="sub">콘텐츠 준비중입니다.</p>
+      <div class="feature-layout">
+        <div class="feature-image">
+          <!-- 1단계에서 복사한 <img> 코드를 바로 아래 줄에 붙여넣으세요 -->
+          <!-- 예시: <img src="data:image/svg+xml;base64,..." alt="파란색 곰"> -->
+        </div>
+        <div class="feature-content">
+          <h1>라이프&질병</h1>
+          <p class="sub">질병 리스크는 생애주기 전반에 걸쳐 발생하며, 특히 중장년기에 집중됩니다. 가족력과 유전적 요인을 미리 파악하고, 건강검진과 보험을 통해 위험을 효과적으로 관리하는 것이 중요합니다.</p>
+          <h3>주요 질병 리스크</h3>
+          <ul>
+            <li><strong>3대 질병:</strong> 암, 뇌혈관질환, 심장질환</li>
+            <li><strong>만성 질환:</strong> 고혈압, 당뇨병</li>
+            <li><strong>노년기 질환:</strong> 치매, 퇴행성 관절염</li>
+          </ul>
+        </div>
+      </div>
     </main>
   </section>
 
-  <section id="life-oldage" class="content-section">
+  <section id="life-oldage" class="content-section" role="tabpanel" aria-labelledby="life-oldage-tab">
     <main class="page">
       <h1>라이프&노년</h1>
       <p class="sub">콘텐츠 준비중입니다.</p>
     </main>
   </section>
 
-  <section id="life-risk" class="content-section">
+  <section id="life-risk" class="content-section" role="tabpanel" aria-labelledby="life-risk-tab">
     <main class="page">
       <h1>라이프&리스크</h1>
       <p class="sub">콘텐츠 준비중입니다.</p>

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   mainNavItems.forEach(item => {
     item.addEventListener('click', () => {
-      const targetId = (item as HTMLElement).dataset.target;
+      const targetId = item.dataset.target;
       if (!targetId) return;
 
       mainNavItems.forEach(i => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const targetId = (tab as HTMLElement).dataset.target;
+      const targetId = tab.dataset.target;
       if (!targetId) return;
 
       tabs.forEach(t => {
@@ -53,11 +53,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Register Service Worker for PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(registration => {
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+  }
+
   // Modal logic for Genes/Family History
   const genesPill = document.getElementById('genes-pill');
   const modalOverlay = document.getElementById('genes-modal-overlay');
 
   if (genesPill && modalOverlay) {
+    const modalContent = modalOverlay.querySelector('.modal-content');
     const modalCloseButton = modalOverlay.querySelector('.modal-close');
 
     const openModal = () => {
@@ -84,19 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.key === 'Escape' && modalOverlay.classList.contains('active')) {
         closeModal();
       }
-    });
-  }
-
-  // Register Service Worker for PWA
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(registration => {
-          console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        })
-        .catch(err => {
-          console.log('ServiceWorker registration failed: ', err);
-        });
     });
   }
 });
